@@ -27,8 +27,9 @@ import android.example.com.squawker.provider.SquawkProvider;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -98,7 +99,7 @@ public class SquawkFirebaseMessageService extends FirebaseMessagingService {
     private void insertSquawk(final Map<String, String> data) {
 
         // Database operations should not be done on the main thread
-        AsyncTask<Void, Void, Void> insertSquawkTask = new AsyncTask<Void, Void, Void>() {
+       AsyncTask<Void, Void, Void> insertSquawkTask = new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(Void... voids) {
